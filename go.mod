@@ -1,4 +1,4 @@
-module opskumu.com/harborcli
+module github.com/opskumu/harborcli
 
 go 1.14
 
