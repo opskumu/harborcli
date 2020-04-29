@@ -163,7 +163,10 @@ func (client *HarborClient) authPing() error {
 		return err
 	}
 
-	resp, _ := client.do(req, nil)
+	resp, err := client.do(req, nil)
+	if err != nil {
+		return err
+	}
 	// If not auth, try login
 	if statusCode := resp.StatusCode; statusCode == 401 {
 		err := client.Login()
